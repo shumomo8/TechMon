@@ -1,24 +1,407 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="misaki_gothic.ttf">
+            <string>MisakiGothic</string>
+        </array>
+    </customFonts>
     <scenes>
-        <!--View Controller-->
+        <!--Lobby View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LobbyViewController" customModule="TechMon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="DZA-p8-J5w">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lobby.png" translatesAutoresizingMaskIntoConstraints="NO" id="F0d-Ze-8he">
+                                <rect key="frame" x="0.0" y="119" width="414" height="415"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yusya.png" translatesAutoresizingMaskIntoConstraints="NO" id="bud-6q-G8Q">
+                                <rect key="frame" x="83.5" y="184" width="247" height="244"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="244" id="TLk-nb-0Yx"/>
+                                    <constraint firstAttribute="width" constant="247" id="kc0-CT-Ze4"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Fj-bx-MS9">
+                                <rect key="frame" x="111.5" y="647" width="191" height="84"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="191" id="5k1-6w-BiN"/>
+                                    <constraint firstAttribute="height" constant="84" id="K3r-wf-TOo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="20"/>
+                                <state key="normal" title="冒険にいく" backgroundImage="gold_button.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="toBattle" destination="BYZ-38-t0r" eventType="touchUpInside" id="pwh-cH-dZu"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huW-57-bwb">
+                                <rect key="frame" x="20" y="135" width="81" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="VIm-3i-NTn"/>
+                                    <constraint firstAttribute="height" constant="41" id="siN-Tw-Tt3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLE-TH-lpM">
+                                <rect key="frame" x="333" y="135" width="81" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="j8Q-5x-3YM"/>
+                                    <constraint firstAttribute="height" constant="41" id="uLn-oW-PRs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="スタミナ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IyY-Xf-Ao7">
+                                <rect key="frame" x="20" y="493" width="81" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="4f5-LB-uSm"/>
+                                    <constraint firstAttribute="height" constant="41" id="jHk-Ux-Z4G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKq-de-dua">
+                                <rect key="frame" x="123" y="493" width="81" height="41"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="81" id="2tK-IN-GDL"/>
+                                    <constraint firstAttribute="height" constant="41" id="dU7-cP-XgV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="2Fj-bx-MS9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="241" id="1CV-qo-MMD"/>
+                            <constraint firstItem="IyY-Xf-Ao7" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-146.5" id="6Nv-uO-gjP"/>
+                            <constraint firstItem="2Fj-bx-MS9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7hD-5e-rIp"/>
+                            <constraint firstItem="bud-6q-G8Q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-142" id="Be9-jh-7ww"/>
+                            <constraint firstItem="2Fj-bx-MS9" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="241" id="IdL-VI-7fX"/>
+                            <constraint firstItem="DKq-de-dua" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-43.5" id="OfU-FC-AT9"/>
+                            <constraint firstItem="IyY-Xf-Ao7" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="65.5" id="Q6A-XC-peY"/>
+                            <constraint firstItem="huW-57-bwb" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-292.5" id="QLn-zG-bJa"/>
+                            <constraint firstItem="FLE-TH-lpM" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="166.5" id="QMt-Ij-tuW"/>
+                            <constraint firstItem="DKq-de-dua" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="65.5" id="bKU-kW-72C"/>
+                            <constraint firstItem="FLE-TH-lpM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-292.5" id="cHq-Bf-Ghr"/>
+                            <constraint firstItem="bud-6q-G8Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="eS3-Yp-ilD"/>
+                            <constraint firstItem="bud-6q-G8Q" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fVx-6I-grs"/>
+                            <constraint firstItem="huW-57-bwb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-146.5" id="g6x-20-tOk"/>
+                            <constraint firstItem="2Fj-bx-MS9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iU0-aP-A0S"/>
+                            <constraint firstItem="bud-6q-G8Q" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-142" id="zfo-da-nfz"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="nameLabal" destination="huW-57-bwb" id="bSJ-9g-SWC"/>
+                        <outlet property="staminaLabal" destination="DKq-de-dua" id="k9Q-a5-h26"/>
+                        <segue destination="JdH-7A-9k8" kind="presentation" identifier="toBattle" modalTransitionStyle="crossDissolve" id="C4s-NT-raU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
+        </scene>
+        <!--Battle View Controller-->
+        <scene sceneID="kDL-N6-O9i">
+            <objects>
+                <viewController id="JdH-7A-9k8" customClass="BattleViewController" customModule="TechMon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Zij-R1-irH">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="bgimage.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="qAd-1r-FKR">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="battlebg.png" translatesAutoresizingMaskIntoConstraints="NO" id="EQ8-rx-a3Q">
+                                <rect key="frame" x="0.0" y="105" width="414" height="566"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="monster.png" translatesAutoresizingMaskIntoConstraints="NO" id="vab-gY-gWG">
+                                <rect key="frame" x="10" y="115" width="166" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="166" id="0Ps-KM-MJz"/>
+                                    <constraint firstAttribute="height" constant="168" id="lUG-9K-Iip"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="yusya.png" translatesAutoresizingMaskIntoConstraints="NO" id="9IM-io-nGa">
+                                <rect key="frame" x="228" y="459" width="166" height="168"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="168" id="OgD-v6-Lat"/>
+                                    <constraint firstAttribute="width" constant="166" id="sW7-6x-qVt"/>
+                                </constraints>
+                            </imageView>
+                            <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fP7-7Q-IVx">
+                                <rect key="frame" x="10" y="473" width="190" height="130"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="BKK-EF-D14"/>
+                                    <constraint firstAttribute="height" constant="130" id="hwg-q0-Qaj"/>
+                                </constraints>
+                            </view>
+                            <view alpha="0.30000001192092896" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BA7-I8-H2m">
+                                <rect key="frame" x="216" y="115" width="190" height="92"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="190" id="7AU-dQ-Xjv"/>
+                                    <constraint firstAttribute="height" constant="92" id="pjW-D8-vEa"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZuP-Lm-DXk">
+                                <rect key="frame" x="122" y="539" width="78" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="Gma-5c-0IN"/>
+                                    <constraint firstAttribute="height" constant="28" id="TPs-h6-9jx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugZ-B8-YG9">
+                                <rect key="frame" x="122" y="575" width="78" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="Bd3-7e-hcR"/>
+                                    <constraint firstAttribute="height" constant="28" id="JeW-CR-Rsq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nBb-1W-iN4">
+                                <rect key="frame" x="112" y="503" width="88" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="16i-E7-2R4"/>
+                                    <constraint firstAttribute="width" constant="88" id="7aC-iq-dEB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I18-vT-9lw">
+                                <rect key="frame" x="228" y="115" width="46" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="KAK-Wg-7WL"/>
+                                    <constraint firstAttribute="height" constant="28" id="NPa-wF-5UV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otu-EF-Zyj">
+                                <rect key="frame" x="228" y="142" width="46" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="9Pf-6S-hp9"/>
+                                    <constraint firstAttribute="height" constant="28" id="RXc-jW-UET"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="s6T-fW-sGU">
+                                <rect key="frame" x="157" y="731" width="100" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Zd1-rX-zSb"/>
+                                    <constraint firstAttribute="height" constant="80" id="u5q-XQ-rCf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <state key="normal" title="ファイア" backgroundImage="gold_button.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="fireAction" destination="JdH-7A-9k8" eventType="touchUpInside" id="oTQ-0q-CGQ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e4O-5f-72x">
+                                <rect key="frame" x="297" y="731" width="97" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="Jgs-rS-A6r"/>
+                                    <constraint firstAttribute="height" constant="80" id="lrY-0m-ICM"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <state key="normal" title="ためる" backgroundImage="gold_button.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="tameruAction" destination="JdH-7A-9k8" eventType="touchUpInside" id="SGC-fY-36J"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtv-zN-trK">
+                                <rect key="frame" x="20" y="731" width="98" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="Upd-Rw-EMe"/>
+                                    <constraint firstAttribute="width" constant="98" id="Wzo-Dx-xWz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <state key="normal" title="こうげき" backgroundImage="gold_button.png">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="attackAction" destination="JdH-7A-9k8" eventType="touchUpInside" id="BfS-XN-ZbO"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vg6-ZX-XTL">
+                                <rect key="frame" x="26" y="473" width="46" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="kZx-3J-KZ6"/>
+                                    <constraint firstAttribute="width" constant="46" id="rGh-si-QEP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ere-Vx-RId">
+                                <rect key="frame" x="26" y="503" width="46" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="AFG-ek-8hn"/>
+                                    <constraint firstAttribute="height" constant="28" id="kyx-Ma-qhF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JnM-1Y-dnP">
+                                <rect key="frame" x="26" y="575" width="46" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="Aof-bm-gad"/>
+                                    <constraint firstAttribute="width" constant="46" id="ROP-yt-FZL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yAt-cI-MqW">
+                                <rect key="frame" x="26" y="539" width="46" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Ifj-gV-KYf"/>
+                                    <constraint firstAttribute="height" constant="28" id="KnZ-NC-igT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZF-bc-gcb">
+                                <rect key="frame" x="228" y="168" width="46" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Z8y-NP-T1O"/>
+                                    <constraint firstAttribute="height" constant="28" id="qor-c2-azn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxC-o7-uAA">
+                                <rect key="frame" x="315" y="142" width="79" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="5ph-FI-PhY"/>
+                                    <constraint firstAttribute="height" constant="28" id="GEQ-Xp-rrb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cKH-hl-HOE">
+                                <rect key="frame" x="315" y="168" width="79" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="79" id="hiw-4d-rsM"/>
+                                    <constraint firstAttribute="height" constant="28" id="k7E-6S-zJa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MisakiGothic" family="MisakiGothic" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ZuP-Lm-DXk" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-46" id="14n-xz-ali"/>
+                            <constraint firstItem="ugZ-B8-YG9" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-46" id="1tM-G3-PPb"/>
+                            <constraint firstItem="ZuP-Lm-DXk" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="132" id="36m-h2-qhx"/>
+                            <constraint firstItem="dtv-zN-trK" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-138" id="3ew-1A-Y8M"/>
+                            <constraint firstItem="yAt-cI-MqW" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-158" id="4Po-Na-ozk"/>
+                            <constraint firstItem="s6T-fW-sGU" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="350" id="5bW-u4-3sQ"/>
+                            <constraint firstItem="otu-EF-Zyj" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="-265" id="6Oh-s9-Vlc"/>
+                            <constraint firstItem="I18-vT-9lw" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="-292" id="7IQ-hl-VnZ"/>
+                            <constraint firstItem="9IM-io-nGa" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="104" id="7Pr-zw-qZ7"/>
+                            <constraint firstItem="ugZ-B8-YG9" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="168" id="CVl-nb-G2V"/>
+                            <constraint firstItem="s6T-fW-sGU" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" id="CWJ-4V-FcA"/>
+                            <constraint firstItem="otu-EF-Zyj" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="44" id="Duo-1T-yvt"/>
+                            <constraint firstItem="fP7-7Q-IVx" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="117" id="F1H-cd-rHT"/>
+                            <constraint firstItem="wxC-o7-uAA" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="147.5" id="GAu-XE-sEn"/>
+                            <constraint firstItem="s6T-fW-sGU" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="350" id="Gaf-V8-3Ed"/>
+                            <constraint firstItem="HZF-bc-gcb" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="-239" id="H4H-w7-t2P"/>
+                            <constraint firstItem="Ere-Vx-RId" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-158" id="HMj-Gi-hUZ"/>
+                            <constraint firstItem="I18-vT-9lw" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="44" id="I2q-er-T8U"/>
+                            <constraint firstItem="Ere-Vx-RId" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="96" id="LLl-TC-1w1"/>
+                            <constraint firstItem="vg6-ZX-XTL" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="66" id="MUK-S0-Qdk"/>
+                            <constraint firstItem="wxC-o7-uAA" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="-265" id="OE5-i7-FE1"/>
+                            <constraint firstItem="nBb-1W-iN4" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="96" id="QnV-IH-4gc"/>
+                            <constraint firstItem="BA7-I8-H2m" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="-260" id="SD6-QG-PVw"/>
+                            <constraint firstItem="e4O-5f-72x" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="138.5" id="TEX-cw-34H"/>
+                            <constraint firstItem="dtv-zN-trK" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-138" id="TZb-gQ-ES1"/>
+                            <constraint firstItem="vab-gY-gWG" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-114" id="Tx1-8w-suQ"/>
+                            <constraint firstItem="BA7-I8-H2m" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="104" id="Uxa-fd-4r1"/>
+                            <constraint firstItem="e4O-5f-72x" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="350" id="WX8-fE-AtE"/>
+                            <constraint firstItem="vab-gY-gWG" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="-222" id="Xgy-5F-WCw"/>
+                            <constraint firstItem="JnM-1Y-dnP" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-158" id="Z8r-9I-QxU"/>
+                            <constraint firstItem="HZF-bc-gcb" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="44" id="bAL-PV-YE4"/>
+                            <constraint firstItem="dtv-zN-trK" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="350" id="fiG-fD-G91"/>
+                            <constraint firstItem="e4O-5f-72x" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="138.5" id="heb-Pb-vKT"/>
+                            <constraint firstItem="nBb-1W-iN4" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-51" id="hgL-wV-Ogy"/>
+                            <constraint firstItem="yAt-cI-MqW" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="132" id="lId-Cy-7CX"/>
+                            <constraint firstItem="e4O-5f-72x" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="350" id="oPC-dZ-kWQ"/>
+                            <constraint firstItem="cKH-hl-HOE" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="-239" id="qOu-EA-YIV"/>
+                            <constraint firstItem="cKH-hl-HOE" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="147.5" id="qZO-hD-VMa"/>
+                            <constraint firstItem="s6T-fW-sGU" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" id="stw-bC-ZQB"/>
+                            <constraint firstItem="9IM-io-nGa" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="122" id="t6F-26-c5e"/>
+                            <constraint firstItem="dtv-zN-trK" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="350" id="uig-bV-cQ3"/>
+                            <constraint firstItem="JnM-1Y-dnP" firstAttribute="centerY" secondItem="Zij-R1-irH" secondAttribute="centerY" constant="168" id="vQt-9M-byR"/>
+                            <constraint firstItem="fP7-7Q-IVx" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-102" id="vnF-wd-IyP"/>
+                            <constraint firstItem="vg6-ZX-XTL" firstAttribute="centerX" secondItem="Zij-R1-irH" secondAttribute="centerX" constant="-158" id="vxJ-t0-0AA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0pX-gD-qvN"/>
+                    </view>
+                    <connections>
+                        <outlet property="enemyHPLabel" destination="wxC-o7-uAA" id="cMe-cs-nqa"/>
+                        <outlet property="enemyImageView" destination="vab-gY-gWG" id="baN-Pb-wXj"/>
+                        <outlet property="enemyMPLabel" destination="cKH-hl-HOE" id="OiM-Kb-A13"/>
+                        <outlet property="enemyNameLabel" destination="I18-vT-9lw" id="fW5-2g-yCN"/>
+                        <outlet property="playerHPLabel" destination="nBb-1W-iN4" id="bod-6T-jU3"/>
+                        <outlet property="playerImageView" destination="9IM-io-nGa" id="8bH-1H-SZK"/>
+                        <outlet property="playerMPLabel" destination="ZuP-Lm-DXk" id="lIO-QW-hqr"/>
+                        <outlet property="playerNameLabel" destination="vg6-ZX-XTL" id="mDc-an-Gq7"/>
+                        <outlet property="playerTPLabel" destination="ugZ-B8-YG9" id="6Jj-fl-Mhi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gPJ-En-f1q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="773.91304347826087" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="battlebg.png" width="320" height="160"/>
+        <image name="bgimage.jpg" width="1280" height="960"/>
+        <image name="gold_button.png" width="800" height="245"/>
+        <image name="lobby.png" width="500" height="400"/>
+        <image name="monster.png" width="88" height="120"/>
+        <image name="yusya.png" width="56" height="56"/>
+    </resources>
 </document>
